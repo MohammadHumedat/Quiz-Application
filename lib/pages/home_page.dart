@@ -1,9 +1,11 @@
 import 'package:basic_flutter/widgets/answer_questions.dart';
+import 'package:basic_flutter/widgets/bottomNavigationBar.dart';
 import 'package:basic_flutter/widgets/questions_item.dart';
 import 'package:basic_flutter/widgets/total_score.dart';
 import 'package:flutter/material.dart';
 import 'package:basic_flutter/models/questions_item_model.dart';
 import 'package:basic_flutter/widgets/stepper.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -34,7 +36,6 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(
                         height: 40,
                       ),
-                    
                       Column(
                         children: List.generate(
                           questions[questionIndix].answers.length,
@@ -80,18 +81,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: IconButton(
-                          color: Color.fromARGB(255, 69, 147, 211),
-                          onPressed: null,
-                          icon: Icon(
-                            Icons.home,
-                            color: Color.fromARGB(255, 48, 47, 47),
-                          ),
-                          tooltip: 'Back to Home',
-                        ),
-                      ),
                     ],
                   ),
                 )
@@ -106,6 +95,7 @@ class _HomePageState extends State<HomePage> {
                       })),
         ),
       ),
+      bottomNavigationBar:const bottomNavigationBar(),
     );
   }
 }
